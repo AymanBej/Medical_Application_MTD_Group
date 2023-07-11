@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "598227497812",
+    "project_id": "health-28b49",
+    "storage_bucket": "health-28b49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598227497812:android:26aad3e2dbaeed7a058ec1",
+        "android_client_info": {
+          "package_name": "at.ayman.med_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598227497812-josa8lc9rrqqkmsbkt17e5r6f4e7mp0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOXGvHWfspQJHTU-kzawLwg7fMyTzya8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598227497812-josa8lc9rrqqkmsbkt17e5r6f4e7mp0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
