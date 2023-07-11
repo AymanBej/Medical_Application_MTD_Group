@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: false,
         backgroundColor: kPrimaryColor,
         title: Text(
-          "Welcome To AYMANHEALTH",
+          "Welcome To MTD Health",
           style: TextStyle(fontSize: 20),
         ),
         actions: <Widget>[

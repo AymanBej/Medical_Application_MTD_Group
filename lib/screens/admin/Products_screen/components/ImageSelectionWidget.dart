@@ -103,56 +103,48 @@ class _ImageSelectionWidgetState extends State<ImageSelectionWidget> {
     }
   }
 
-  void uploadImage(BuildContext context) async {
-    // Create a unique filename for the uploaded image
-    String fileName = p.basename(_image.path);
+ void uploadImage(BuildContext context) async {
+  // Create a unique filename for the uploaded image
+  String fileName = p.basename(_image.path);
 
-    // Create a reference to the Firebase Storage location
-    Reference storageReference =
-        FirebaseStorage.instance.ref().child('images/$fileName');
+  // Create a reference to the Firebase Storage location
+  Reference storageReference =
+      FirebaseStorage.instance.ref().child('images/$fileName');
 
-    // Upload the file to the specified location
-    UploadTask uploadTask = storageReference.putFile(_image);
+  // Upload the file to the specified location
+  UploadTask uploadTask = storageReference.putFile(_image);
 
-    // Monitor the upload process
-    uploadTask.snapshotEvents.listen((TaskSnapshot snapshot) {
-      if (snapshot.state == TaskState.running) {
-        // Display a progress indicator or show upload progress
-      } else if (snapshot.state == TaskState.success) {
-        // Upload completed successfully
-        storageReference.getDownloadURL().then((fileUrl) {
-          setState(() {
-            _url = fileUrl;
-          });
-          widget.imageUrlController.text = fileUrl; // Set the imageUrl value
+  // Show a circular progress indicator while uploading
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Uploading Image'),
+        content: CircularProgressIndicator(), // Circular spinner
+      );
+    },
+  );
 
-          // Use the fileUrl as needed (e.g., save to database, display the image)
-          print('Download URL: $_url');
-
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Image uploaded successfully'),
-                actions: [
-                  TextButton(
-                    child: Text('OK'),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
-              );
-            },
-          );
+  // Monitor the upload process
+  uploadTask.snapshotEvents.listen((TaskSnapshot snapshot) {
+    if (snapshot.state == TaskState.success) {
+      // Upload completed successfully
+      storageReference.getDownloadURL().then((fileUrl) {
+        setState(() {
+          _url = fileUrl;
         });
-      } else if (snapshot.state == TaskState.error) {
-        // Error occurred during upload
+        widget.imageUrlController.text = fileUrl; // Set the imageUrl value
+
+        // Use the fileUrl as needed (e.g., save to database, display the image)
+        print('Download URL: $_url');
+
+        Navigator.of(context).pop(); // Close the progress dialog
+
         showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Failed to upload image'),
+              title: Text('Image uploaded successfully'),
               actions: [
                 TextButton(
                   child: Text('OK'),
@@ -164,7 +156,28 @@ class _ImageSelectionWidgetState extends State<ImageSelectionWidget> {
             );
           },
         );
-      }
-    });
-  }
+      });
+    } else if (snapshot.state == TaskState.error) {
+      // Error occurred during upload
+      Navigator.of(context).pop(); // Close the progress dialog
+
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Failed to upload image'),
+            actions: [
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  });
+}
 }
