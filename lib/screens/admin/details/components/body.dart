@@ -22,7 +22,7 @@ class Body extends StatelessWidget {
                 product: product,
               ),
               SizedBox(
-                height: 38,
+                height: 39,
               )
             ],
           ),

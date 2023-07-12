@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
-class ProductSuccessScreen extends StatelessWidget {
-  static String routeName = "/product_success";
+class ProductEditedSuccessScreen extends StatelessWidget {
+  static String routeName = "/product_edit_success";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: SizedBox(),
-        title: Text("Product added Successefuly !"),
+        title: Text("Medication Edited Successefuly !"),
       ),
       body: Body(),
     );

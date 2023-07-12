@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Product {
+  final String id; // Added id attribute
   final String name;
   final String description;
   final String precautions;
@@ -11,6 +12,7 @@ class Product {
   final String contraindication;
 
   Product({
+    required this.id, // Updated constructor to include id
     required this.name,
     required this.description,
     required this.imageUrl,
@@ -26,6 +28,7 @@ class Product {
 
     if (data == null) {
       return Product(
+        id: doc.id, // Set the document ID as the id attribute
         name: '',
         description: '',
         imageUrl: '',
@@ -33,6 +36,7 @@ class Product {
     }
 
     return Product(
+      id: doc.id, // Set the document ID as the id attribute
       name: data['name'] ?? '',
       description: data['description'] ?? '',
       precautions: data['precautions'] ?? '',

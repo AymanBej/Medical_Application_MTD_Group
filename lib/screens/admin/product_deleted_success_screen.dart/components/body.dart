@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
         SizedBox(height: SizeConfig.screenHeight * 0.08),
         Expanded(
           child: Text(
-            "Product added Successefuly !",
+            "Medication Deleted Successefuly !",
             style: TextStyle(
               fontSize: getProportionateScreenWidth(30),
               fontWeight: FontWeight.bold,

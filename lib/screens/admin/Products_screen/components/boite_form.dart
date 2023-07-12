@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:med_app/components/default_button.dart';
 import 'package:med_app/components/form_error.dart';
-import 'package:med_app/screens/admin/product_success_screen/product_success_screen.dart';
+import 'package:med_app/screens/admin/product_added_success_screen/product_success_screen.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../constants.dart';
 import '../../../../size_config.dart';
@@ -116,7 +116,7 @@ class _FormAddMedState extends State<FormAddMed> {
                         });
                         await sendProductDataToDB();
                         Navigator.pushNamed(
-                            context, ProductSuccessScreen.routeName);
+                            context, ProductAddedSuccessScreen.routeName);
 
                         setState(() {
                           showSpinner = false;

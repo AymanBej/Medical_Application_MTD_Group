@@ -3,7 +3,9 @@ import 'package:med_app/screens/admin/Doctors_screen/doctors_screen.dart';
 import 'package:med_app/screens/admin/Products_screen/admin_products_screen.dart';
 import 'package:med_app/screens/admin/Products_screen/components/body.dart';
 import 'package:med_app/screens/admin/details/details_screen.dart';
-import 'package:med_app/screens/admin/product_success_screen/product_success_screen.dart';
+import 'package:med_app/screens/admin/product_added_success_screen/product_success_screen.dart';
+import 'package:med_app/screens/admin/product_deleted_success_screen.dart/product_success_screen.dart';
+import 'package:med_app/screens/admin/product_edited_success_screen/product_success_screen.dart';
 import 'package:med_app/screens/allproducts/allproducts_screen.dart';
 import 'package:med_app/screens/details/details_screen.dart';
 import 'package:med_app/screens/forgot_password/forgot_password_screen.dart';
@@ -24,10 +26,14 @@ final Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (context) => SignUpScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
-  AllProducts.routeName:(context) => AllProducts(),
+  AllProducts.routeName: (context) => AllProducts(),
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
-  AdminProducts.routeName:(context)=> AdminProductsScreen(),
-  DoctorsScreen.routeName : (context)=> DoctorsScreen(),
-  ProductSuccessScreen.routeName :(context)=> ProductSuccessScreen(),
-  DetailsScreenAdmin.routeName : (context)=> DetailsScreenAdmin(),
+  AdminProducts.routeName: (context) => AdminProductsScreen(),
+  DoctorsScreen.routeName: (context) => DoctorsScreen(),
+  ProductAddedSuccessScreen.routeName: (context) => ProductAddedSuccessScreen(),
+  ProductDeletedSuccessScreen.routeName: (context) =>
+      ProductDeletedSuccessScreen(),
+  ProductEditedSuccessScreen.routeName: (context) =>
+      ProductEditedSuccessScreen(),
+  DetailsScreenAdmin.routeName: (context) => DetailsScreenAdmin(),
 };
