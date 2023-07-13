@@ -3,6 +3,7 @@ import 'package:med_app/screens/admin/Doctors_screen/doctors_screen.dart';
 import 'package:med_app/screens/admin/Products_screen/admin_products_screen.dart';
 import 'package:med_app/screens/admin/Products_screen/components/body.dart';
 import 'package:med_app/screens/admin/details/details_screen.dart';
+import 'package:med_app/screens/admin/login/sign_up_screen.dart';
 import 'package:med_app/screens/admin/product_added_success_screen/product_success_screen.dart';
 import 'package:med_app/screens/admin/product_deleted_success_screen.dart/product_success_screen.dart';
 import 'package:med_app/screens/admin/product_edited_success_screen/product_success_screen.dart';
@@ -36,4 +37,5 @@ final Map<String, WidgetBuilder> routes = {
   ProductEditedSuccessScreen.routeName: (context) =>
       ProductEditedSuccessScreen(),
   DetailsScreenAdmin.routeName: (context) => DetailsScreenAdmin(),
+  AdminLoginScreen.routeName: (context) => AdminLoginScreen(),
 };

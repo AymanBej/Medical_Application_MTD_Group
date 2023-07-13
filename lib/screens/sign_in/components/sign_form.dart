@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:med_app/components/custom_surfix_icon.dart';
 import 'package:med_app/components/form_error.dart';
 import 'package:med_app/helper/keyboard.dart';
-import 'package:med_app/screens/admin/Products_screen/admin_products_screen.dart';
+import 'package:med_app/screens/admin/login/sign_up_screen.dart';
 import 'package:med_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:med_app/screens/login_success/login_success_screen.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -56,19 +56,20 @@ class _SignFormState extends State<SignForm> {
                 buildEmailFormField(),
                 SizedBox(height: getProportionateScreenHeight(20)),
                 buildPasswordFormField(),
-                SizedBox(height: getProportionateScreenHeight(10)),
+                SizedBox(height: getProportionateScreenHeight(15)),
                 Row(
                   children: [
                     Spacer(),
                     GestureDetector(
-                      onTap: () =>
-                          Navigator.pushNamed(context, AdminProducts.routeName),
+                      onTap: () => Navigator.pushNamed(
+                          context, AdminLoginScreen.routeName),
                       child: Row(
                         children: [
-                          Icon(Icons.person , color:kSecondaryColor ,), // Add the icon here
-                          SizedBox(
-                              width:
-                                  4), // Optional: Add some spacing between the icon and the text
+                          Icon(
+                            Icons.person,
+                            color: kSecondaryColor,
+                          ),
+                          SizedBox(width: 5),
                           Text(
                             "Admin Login",
                             style:
@@ -77,15 +78,17 @@ class _SignFormState extends State<SignForm> {
                         ],
                       ),
                     ),
-                    Spacer(
-                      flex: 7,
-                    ),
+                    Spacer(flex: 7),
                     GestureDetector(
                       onTap: () => Navigator.pushNamed(
                           context, ForgotPasswordScreen.routeName),
-                      child: Text(
-                        "Forgot Password",
-                        style: TextStyle(decoration: TextDecoration.underline),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Text(
+                          "Forgot Password",
+                          style:
+                              TextStyle(decoration: TextDecoration.underline),
+                        ),
                       ),
                     )
                   ],
