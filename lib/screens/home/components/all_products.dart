@@ -26,9 +26,8 @@ class AllProducts extends StatelessWidget {
           return Text('No products available');
         }
 
-        List<Product> products = data.docs
-            .map((doc) => Product.fromFirestore(doc))
-            .toList();
+        List<Product> products =
+            data.docs.map((doc) => Product.fromFirestore(doc)).toList();
 
         return Column(
           children: [
@@ -38,12 +37,6 @@ class AllProducts extends StatelessWidget {
               ),
               child: SectionTitle(
                 title: "All Medications",
-                onSeeMorePressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AllProductsScreen()),
-                  );
-                },
               ),
             ),
             SizedBox(height: getProportionateScreenWidth(15)),
