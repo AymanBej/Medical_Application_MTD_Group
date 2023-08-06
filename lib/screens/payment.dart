@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
-import 'package:med_app/screens/home/home_screen.dart';
 import 'package:med_app/screens/login_success/login_success_screen.dart';
 
 import '../components/default_button.dart';

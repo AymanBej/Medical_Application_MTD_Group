@@ -4,7 +4,6 @@ import 'package:med_app/components/form_error.dart';
 import 'package:med_app/helper/keyboard.dart';
 import 'package:med_app/screens/admin/login/sign_up_screen.dart';
 import 'package:med_app/screens/forgot_password/forgot_password_screen.dart';
-import 'package:med_app/screens/login_success/login_success_screen.dart';
 import 'package:med_app/screens/payment.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:firebase_auth/firebase_auth.dart';
