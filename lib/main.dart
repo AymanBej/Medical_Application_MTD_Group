@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:med_app/constants.dart';
 import 'package:med_app/routes.dart';
 import 'package:med_app/screens/home/home_screen.dart';
 import 'package:med_app/screens/splash/splash_screen.dart';
@@ -8,6 +10,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey ="pk_test_51NNFW7J54CVgf2sdTUGm1TDSHziha6Epq187HTjVj4mEupM2bnWj986ia3pST0ScW88Pct72fjMrRsmF0Cyee4qw00tClkeF9H";    
+  await Stripe.instance.applySettings();
   await Firebase.initializeApp();
   runApp(MyApp());
 }

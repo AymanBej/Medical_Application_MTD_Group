@@ -5,6 +5,7 @@ import 'package:med_app/helper/keyboard.dart';
 import 'package:med_app/screens/admin/login/sign_up_screen.dart';
 import 'package:med_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:med_app/screens/login_success/login_success_screen.dart';
+import 'package:med_app/screens/payment.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -97,7 +98,7 @@ class _SignFormState extends State<SignForm> {
                 FormError(errors: errors),
                 SizedBox(height: getProportionateScreenHeight(20)),
                 DefaultButton(
-                  text: "Login",
+                  text: "Pay to login",
                   press: () async {
                     setState(() {
                       showSpinner = true;
@@ -110,10 +111,7 @@ class _SignFormState extends State<SignForm> {
                           password: password,
                         );
                         KeyboardUtil.hideKeyboard(context);
-                        Navigator.pushNamed(
-                          context,
-                          LoginSuccessScreen.routeName,
-                        );
+                        Navigator.pushNamed(context, PaymenScreen.routeName);
                       }
                       setState(() {
                         showSpinner = false;

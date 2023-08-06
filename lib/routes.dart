@@ -12,6 +12,7 @@ import 'package:med_app/screens/details/details_screen.dart';
 import 'package:med_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:med_app/screens/home/home_screen.dart';
 import 'package:med_app/screens/login_success/login_success_screen.dart';
+import 'package:med_app/screens/payment.dart';
 import 'package:med_app/screens/sign_in/sign_in_screen.dart';
 import 'package:med_app/screens/signup_success/signup_success_screen.dart';
 import 'package:med_app/screens/splash/splash_screen.dart';
@@ -38,4 +39,5 @@ final Map<String, WidgetBuilder> routes = {
       ProductEditedSuccessScreen(),
   DetailsScreenAdmin.routeName: (context) => DetailsScreenAdmin(),
   AdminLoginScreen.routeName: (context) => AdminLoginScreen(),
+  PaymenScreen.routeName : (contex)=> PaymenScreen(),
 };

@@ -55,7 +55,7 @@ class AdminBottomNavBar extends StatelessWidget {
             icon: Icon(
               Icons.people,
               size: 30,
-              color:  MenuStateAdmin.doctors == selectedAdminMenu
+              color: MenuStateAdmin.doctors == selectedAdminMenu
                   ? kPrimaryColor
                   : inActiveIconColor,
             ),
@@ -66,22 +66,9 @@ class AdminBottomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(
-              Icons.money,
-              size: 30,
-              color:  MenuStateAdmin.payment == selectedAdminMenu
-                  ? kPrimaryColor
-                  : inActiveIconColor,
-            ),
-            onPressed: () {
-              _auth.signOut();
-              Navigator.pushNamed(context, SignInScreen.routeName);
-            },
-          ),
-          IconButton(
-            icon: Icon(
               Icons.exit_to_app,
               size: 30,
-              color:  MenuStateAdmin.signout == selectedAdminMenu
+              color: MenuStateAdmin.signout == selectedAdminMenu
                   ? kPrimaryColor
                   : inActiveIconColor,
             ),

@@ -44,6 +44,7 @@ const String kIsPopularNullError = "Select the popularity option ";
 
 const String kEmailAlreadyInUseError =
     "The email address is already in use by another account.";
+    
 
 final otpInputDecoration = InputDecoration(
   contentPadding:

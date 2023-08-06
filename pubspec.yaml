@@ -50,7 +50,7 @@ dependencies:
   file_picker: ^5.3.2
   path_provider: ^2.0.5
   path: ^1.8.3
-  
+  flutter_stripe: ^9.3.0
 
 dev_dependencies:
   flutter_test:

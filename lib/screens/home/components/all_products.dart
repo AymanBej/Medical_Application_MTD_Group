@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:med_app/components/product_card_user.dart';
 import 'package:med_app/models/Product.dart';
-import 'package:med_app/screens/allproducts/components/body.dart';
-
 import '../../../size_config.dart';
 import 'section_title.dart';
 
